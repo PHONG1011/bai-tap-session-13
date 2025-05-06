@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Đếm số lần xuất hiện</title>
+</head>
+<body>
+    <script>
+        // Tạo mảng có sẵn từ 10 đến 20 phần tử ngẫu nhiên (giá trị từ 1 đến 50)
+        let soLuong = Math.floor(Math.random() * 11) + 10; // 10 - 20 phần tử
+        let mang = [];
+        let i = 0;
+
+        // Sử dụng vòng lặp while để khởi tạo mảng
+        while (i < soLuong) {
+            let soNgauNhien = Math.floor(Math.random() * 50) + 1;
+            mang.push(soNgauNhien);
+            i++;
+        }
+
+        // Nhập vào một số nguyên k từ người dùng
+        let k = parseInt(prompt("Nhập vào một số nguyên để kiểm tra:"));
+
+        // Đếm số lần xuất hiện của k bằng do...while
+        let dem = 0;
+        let j = 0;
+        do {
+            if (mang[j] === k) {
+                dem++;
+            }
+            j++;
+        } while (j < mang.length);
+
+        // Hiển thị kết quả
+        alert("Mảng: " + mang.join(", "));
+        alert("Số " + k + " xuất hiện " + dem + " lần trong mảng.");
+    </script>
+</body>
+</html>
